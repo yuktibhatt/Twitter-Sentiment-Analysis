@@ -77,7 +77,7 @@ export function AccountBox(props){
             <HeaderContainer>
               <HeaderText>Welcome</HeaderText>
               <HeaderText>Back</HeaderText>
-              <SmallText>Please sign-in to continue</SmallText>
+              <SmallText>Please sign in to continue</SmallText>
             </HeaderContainer>
         </TopContainer>
         <InnerContainer>
