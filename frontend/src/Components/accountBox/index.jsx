@@ -8,7 +8,7 @@ const BoxContainer = styled.div`
   flex-direction: column;
   border-radius: 19px;
   background-color: #fff;
-  box-shadow: 0 0 2px rgba(15, 15, 15, 0.28);
+  box-shadow: 0 0 5px rgba(15, 15, 15, 0.28);
   position: relative;
   overflow: hidden;
 `;
@@ -53,6 +53,15 @@ z-index: 10;
 margin : 0;
 `;
 
+const SmallText = styled.h5`
+color : #fff;
+font-weight: 500;
+font-weight : 11px;
+z-index : 10;
+margin : 0;
+margin-top: 7px;
+`;
+
 export function AccountBox(props){
     return <BoxContainer>
         <TopContainer>
@@ -60,6 +69,7 @@ export function AccountBox(props){
             <HeaderContainer>
               <HeaderText>Welcome</HeaderText>
               <HeaderText>Back</HeaderText>
+              <SmallText>Please sign-in to continue</SmallText>
             </HeaderContainer>
         </TopContainer>
     </BoxContainer>
