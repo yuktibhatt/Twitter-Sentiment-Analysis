@@ -3,6 +3,7 @@ from config import ApplicationConfig
 from flask_session import Session
 from flask_bcrypt import Bcrypt
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 from uuid import uuid4
 # from models import db,User
 
@@ -12,7 +13,7 @@ app.config.from_object(ApplicationConfig)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:password:1234@localhost/twitterSentiment'
 
 bcrypt = Bcrypt(app)
-# CORS(app, supports_credentials=True)
+CORS(app, supports_credentials=True)
 server_session = Session(app)
 
 db = SQLAlchemy(app)
@@ -90,6 +91,11 @@ def login_user():
         "id": user.id,
         "email": user.email
     })
+
+@app.route("/logout", methods=['POST'])
+def logout_user():
+    session.pop("user_id")
+    return "200"
 
 
 if __name__ == '__main__':
